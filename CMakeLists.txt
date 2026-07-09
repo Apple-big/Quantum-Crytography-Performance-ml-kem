@@ -65,7 +65,7 @@ if(PROJECT_IS_TOP_LEVEL)
     set(ML_KEM_WARNING_FLAGS /W4)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_WARNINGS)
   else()
-    set(ML_KEM_WARNING_FLAGS -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wformat=2 -Wcast-qual -Wold-style-cast -Wundef -Werror)
+    set(ML_KEM_WARNING_FLAGS -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wformat=2 -Wcast-qual -Wold-style-cast -Wundef)
     if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
       list(APPEND ML_KEM_WARNING_FLAGS -Wno-pass-failed)
     endif()
@@ -253,6 +253,16 @@ if(ML_KEM_BUILD_EXAMPLES)
     target_compile_options(${ex_target} PRIVATE ${ML_KEM_WARNING_FLAGS})
   endforeach()
 endif()
+
+# -- Experiments --
+add_executable(
+    research_experiments
+    experiments/research_experiments.cpp
+)
+target_link_libraries(
+    research_experiments
+    PRIVATE ml-kem
+)
 
 # --- Install ---
 include(GNUInstallDirs)

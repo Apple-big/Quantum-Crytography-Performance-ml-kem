@@ -1,0 +1,4 @@
+ParameterSet,KeyGenLatency,EncapsulationLatency,DecapsulationLatency,TotalLatency,Throughput,PublicKeySize,SecretKeySize,CiphertextSize,MemoryUsage,ComputationalOverhead
+ML-KEM-512,60.583,93.708,50.5,204.791,4883.03,800,1632,768,3360,3200
+ML-KEM-768,79.375,79.5,68.667,227.542,4394.79,1184,2400,1088,4832,4672
+ML-KEM-1024,101.75,87.125,75.792,264.667,3778.33,1568,3168,1568,6464,6304
