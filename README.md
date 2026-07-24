@@ -66,7 +66,6 @@ Even the most computationally intensive parameter set completed a full key estab
 │   └── benchmark_1000000.csv
 │
 ├── README.md
-├── REPRODUCIBILITY.md
 └── CMakeLists.txt
 ```
 
@@ -219,10 +218,9 @@ Wrexham University.
 
 ---
 
-## License
 
-This repository is provided for academic and research purposes.
+## Acknowledgements
 
-The benchmarking framework and analysis were developed as part of this dissertation.
-
-The underlying ML-KEM implementation remains subject to the original license of the upstream project.
+```text
+This work builds upon the open-source ML-KEM implementation developed by Anjan Roy and follows the NIST FIPS 203 specification for the Module-Lattice-Based Key Encapsulation Mechanism (ML-KEM). The original implementation provided the cryptographic foundation upon which the benchmarking framework and experimental evaluation presented in this dissertation were developed.
+```
