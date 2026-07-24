@@ -143,7 +143,7 @@ for (int i = 0; i < NUM_TRANSACTIONS; ++i)
 }
 
 auto t4 = high_resolution_clock::now();
-==
+
 double keygen_latency = duration<double, micro>(t2 - t1).count() / NUM_TRANSACTIONS;
 
 double encap_latency = duration<double, micro>(t3 - t2).count() / NUM_TRANSACTIONS;
@@ -163,6 +163,11 @@ double total_latency = keygen_latency + encap_latency + decap_latency;
         sizeof(pubkey) + sizeof(seckey) + sizeof(cipher);
 
     cout << "\n===== ML-KEM-768 =====\n";
+    cout << "Key generation latency: " << keygen_latency << " us\n";
+    cout << "Encapsulation latency: " << encap_latency << " us\n";
+    cout << "Decapsulation latency: " << decap_latency << " us\n";
+    cout << "Total latency: " << total_latency << " us\n";
+    cout << "Throughput: " << throughput << " transactions/sec\n";
 
     csv << "ML-KEM-768,"
     << NUM_TRANSACTIONS << ","
@@ -242,6 +247,11 @@ double total_latency = keygen_latency + encap_latency + decap_latency;
         sizeof(pubkey) + sizeof(seckey) + sizeof(cipher);
 
     cout << "\n===== ML-KEM-1024 =====\n";
+    cout << "Key generation latency: " << keygen_latency << " us\n";
+    cout << "Encapsulation latency: " << encap_latency << " us\n";
+    cout << "Decapsulation latency: " << decap_latency << " us\n";
+    cout << "Total latency: " << total_latency << " us\n";
+    cout << "Throughput: " << throughput << " transactions/sec\n";
 
     csv << "ML-KEM-1024,"
     << NUM_TRANSACTIONS << ","
