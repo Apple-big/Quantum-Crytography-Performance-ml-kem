@@ -221,6 +221,4 @@ Wrexham University.
 
 ## Acknowledgements
 
-```text
 This work builds upon the open-source ML-KEM implementation developed by Anjan Roy and follows the NIST FIPS 203 specification for the Module-Lattice-Based Key Encapsulation Mechanism (ML-KEM). The original implementation provided the cryptographic foundation upon which the benchmarking framework and experimental evaluation presented in this dissertation were developed.
-```
