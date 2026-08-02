@@ -10,41 +10,87 @@ This repository contains the implementation, benchmarking framework, experimenta
 
 ## Project Overview
 
-Quantum computing presents a significant challenge to traditional public-key cryptography such as RSA and Elliptic Curve Cryptography (ECC). In response, the National Institute of Standards and Technology (NIST) standardized **ML-KEM (formerly CRYSTALS-Kyber)** as the recommended post-quantum Key Encapsulation Mechanism (FIPS 203).
-
-This project experimentally evaluates the computational performance of the three standardized ML-KEM parameter sets:
+Quantum computing threatens the long-term security of classical public-key cryptographic
+algorithms such as RSA and Elliptic Curve Cryptography (ECC), both of which are widely
+used to secure financial systems. To address this challenge, the National Institute of
+Standards and Technology (NIST) standardized the Module-Lattice-Based Key
+Encapsulation Mechanism (ML-KEM) in FIPS 203 as the primary quantum-resistant key
+establishment algorithm.
+This project presents a comparative benchmarking evaluation of the three standardized
+ML-KEM parameter sets:
 
 - ML-KEM-512
 - ML-KEM-768
 - ML-KEM-1024
 
-within a simulated financial transaction workflow to determine their suitability for high-performance financial systems. 
-
+The evaluation was performed using a controlled benchmarking framework that simulates
+repeated key establishment operations representative of future financial transaction
+systems.
 ---
 
 ## Research Objectives
 
-The study investigates:
+The study evaluates and compares the three standardized ML-KEM parameter sets using
+the following performance metrics:
 
 - Key generation latency
 - Encapsulation latency
 - Decapsulation latency
-- Total cryptographic latency
+- Total key establishment latency
 - Transaction throughput
-- Security vs performance trade-offs
-- Practical deployment considerations for financial transaction systems
+- Public key size
+- Secret key size
+- Ciphertext size
+The study also examines the computational trade-offs associated with increasing security
+levels and identifies the most suitable parameter set for future financial transaction systems.
+
+---
+
+## Validation
+Before benchmarking, the implementation was verified through:
+- Functional correctness testing
+- NIST Automated Cryptographic Validation Protocol (ACVP) Known Answer Tests
+(KATs)
+These validation procedures ensured that all benchmark measurements were obtained from
+a standards-compliant implementation of ML-KEM.
+
+---
+
+## Experimental Configuration
+Each standardized parameter set was benchmarked using four workloads:
+
+- 10,000
+- 50,000
+- 500,000
+- 1,000,000
+
+Each workload was executed five independent times, after which the mean and standard
+deviation were calculated.
+Each benchmark iteration performed:
+
+- Key generation
+- Encapsulation
+- Decapsulation
+- Shared secret verification
+- Timing measurement
+- Key size measurement
 
 ---
 
 ## Key Findings
 
-The benchmarking results demonstrate that:
-
-- **ML-KEM-512** delivers the lowest latency and highest throughput.
-- **ML-KEM-768** provides the best balance between computational efficiency and post-quantum security.
-- **ML-KEM-1024** offers the highest security level with increased computational overhead.
-
-Even the most computationally intensive parameter set completed a full key establishment operation in approximately **67 μs** while sustaining **over 14,000 transactions per second**, indicating that ML-KEM is practical for modern financial transaction systems.
+The experimental evaluation demonstrated that:
+- ML-KEM-512 consistently achieved the lowest latency and highest throughput.
+- ML-KEM-768 provided the best overall balance between computational efficiency
+and quantum-resistant security.
+- ML-KEM-1024 provided the highest security level but incurred the greatest
+computational overhead.
+- Public key, secret key and ciphertext sizes remained constant across all benchmark
+workloads, confirming that communication overhead depends only on the selected
+parameter set rather than transaction volume.
+- The implementation maintained stable performance across increasing workloads,
+with only a small number of isolated benchmark outliers attributable to system-level
+execution variability.
 
 ---
 
@@ -88,9 +134,9 @@ Even the most computationally intensive parameter set completed a full key estab
 - Apple Clang Compiler
 - CMake
 - Release Build
-- Compiler Optimisation: `-O3 -march=native`
+- Compiler Optimisation: 
 
-The implementation was benchmarked using native execution with `std::chrono::high_resolution_clock`. 
+The implementation was benchmarked using native execution with  
 
 ---
 
@@ -158,14 +204,17 @@ Export benchmark results to CSV for analysis.
 
 ## Research Contribution
 
-This work contributes a reproducible benchmarking framework for evaluating standardized ML-KEM implementations under workloads representative of financial transaction systems.
+TThis repository provides a reproducible benchmarking framework for evaluating standardized
+ML-KEM parameter sets under controlled experimental conditions.
+The work contributes:
+- A reproducible benchmarking methodology
+- Functional validation and standards-compliant verification of ML-KEM
+- Comparative performance measurements across all standardized parameter sets
 
-The project provides:
-
-- A reproducible experimental methodology
-- Standards-compliant ML-KEM validation
-- Comparative benchmarking of all three standardized parameter sets
-- Performance analysis suitable for researchers and practitioners considering migration to post-quantum cryptography :
+- Experimental evidence supporting parameter selection for future financial transaction
+systems
+- Publicly available benchmark source code and datasets to facilitate reproducibility
+and further research
 
 ---
 
