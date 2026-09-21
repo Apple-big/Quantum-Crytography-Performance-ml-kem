@@ -2,12 +2,6 @@
 
 ## Performance Analysis and Implementation of the ML-KEM (CRYSTALS-Kyber) Algorithm
 
-This repository contains the implementation, benchmarking framework, experimental results, and supporting documentation developed for my MSc dissertation:
-
-> **Post-Quantum Cryptography for Financial Transaction Systems: Performance Analysis and Implementation of the ML-KEM (CRYSTALS-Kyber) Algorithm** 
-
----
-
 ## Project Overview
 
 Quantum computing threatens the long-term security of classical public-key cryptographic
@@ -26,6 +20,10 @@ ML-KEM parameter sets:
 The evaluation was performed using a controlled benchmarking framework that simulates
 repeated key establishment operations representative of future financial transaction
 systems.
+---
+
+> **This repository contains the implementation, benchmarking framework, experimental results, and supporting documentation developed for my MSc Data Science and Big Data Analytics with Advanced Practice dissertation at Wrexham University, August 2026**
+
 ---
 
 ## Research Objectives
@@ -99,10 +97,7 @@ execution variability.
 ```text
 .
 ├── experiments/
-│   ├── research_experiments.cpp
-│   
-│   
-│   
+│   ├── research_experiments.cpp 
 │  
 │
 ├── results/
@@ -238,35 +233,6 @@ https://github.com/itzmeanjan/ml-kem
 All modifications, benchmarking code, experimental design, and analysis presented in this repository were developed as part of the MSc dissertation.
 
 ---
-
-## Dissertation
-
-**Elvis Chinaka**
-
-**MSc Data Science and Big Data Analytics with Advanced Practice**
-
-Wrexham University
-
-2026
-
----
-
-## Citation
-
-If you use this repository in your research, please cite:
-
-```text
-Chinaka, E. (2026).
-
-Post-Quantum Cryptography for Financial Transaction Systems:
-Performance Analysis and Implementation of the ML-KEM (CRYSTALS-Kyber) Algorithm.
-
-MSc Dissertation,
-Wrexham University.
-```
-
----
-
 
 ## Acknowledgements
 
