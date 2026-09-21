@@ -3,7 +3,7 @@
 ## Performance Analysis and Implementation of the ML-KEM (CRYSTALS-Kyber) Algorithm
 
 ## Project Overview
-
+---
 Quantum computing threatens the long-term security of classical public-key cryptographic
 algorithms such as RSA and Elliptic Curve Cryptography (ECC), both of which are widely
 used to secure financial systems. To address this challenge, the National Institute of
@@ -20,6 +20,7 @@ ML-KEM parameter sets:
 The evaluation was performed using a controlled benchmarking framework that simulates
 repeated key establishment operations representative of future financial transaction
 systems.
+
 ---
 
 > **This repository contains the implementation, benchmarking framework, experimental results, and supporting documentation developed for my MSc Data Science and Big Data Analytics with Advanced Practice dissertation at Wrexham University, August 2026**
